@@ -1,0 +1,5 @@
+.slick-slide img {
+  height: 75vh !important;
+  object-fit: cover;
+  border-radius: 33px;
+}
