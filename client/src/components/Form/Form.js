@@ -16,6 +16,9 @@ import { useHistory } from "react-router-dom";
 // Styles
 import useStyles from "./styles";
 import MyEditor from "./Editor";
+import Calendar from "react-calendar";
+import Calender from "./Calender";
+import GoogleMaps from "./GoogleMaps";
 
 export default function Form({ currentId, setCurrentId }) {
   const [postData, setPostData] = useState({
@@ -112,25 +115,29 @@ export default function Form({ currentId, setCurrentId }) {
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
 
-        {/* <TextField
-          name="message"
+        <div>
+          <p style={{ fontFamily: "cursive", textAlign: "center" }}>
+            Please Select Your Travel Diary Date
+          </p>
+          <Calender />
+        </div>
+
+        <TextField
+          name="Please Enter Your Travel Location"
           variant="outlined"
-          label="Message"
+          label="Please Enter Your Travel Location"
           fullWidth
-          value={postData.message}
+          value={postData.tags}
           onChange={(e) =>
-            setPostData({ ...postData, message: e.target.value })
+            setPostData({ ...postData, tags: e.target.value.split(",") })
           }
-        /> */}
+        />
+
         <div
           name="message"
           variant="outlined"
           label="Message"
           fullWidth
-          value={postData.message}
-          onChange={(e) =>
-            setPostData({ ...postData, message: e.target.value })
-          }
           style={{
             height: "100%",
             width: "100%",
@@ -139,7 +146,14 @@ export default function Form({ currentId, setCurrentId }) {
             padding: "20px",
           }}
         >
-          <MyEditor />
+          <p style={{ fontFamily: "cursive", textAlign: "center" }}>
+            Please Write Your Travel Diary Here
+          </p>
+          <MyEditor
+            handleChange={(e) =>
+              setPostData({ ...postData, message: e.blocks[0].text })
+            }
+          />
         </div>
         <TextField
           name="tags"
