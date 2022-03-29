@@ -109,7 +109,7 @@ export default function Post({ post, setCurrentId }) {
         </Typography>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            {post.message}
+            {post.message.slice(0, 200)}
           </Typography>
         </CardContent>
       </ButtonBase>

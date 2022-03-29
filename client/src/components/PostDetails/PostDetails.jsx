@@ -68,7 +68,7 @@ const PostDetails = () => {
     <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
-          <Typography variant="h3" component="h2">
+          <Typography variant="h3" component="h2" style={{ fontSize: "2.5vw" }}>
             {post.title}
           </Typography>
           <Typography
