@@ -48,7 +48,7 @@ const Auth = () => {
   const [formData, setFormData] = useState(initialState);
 
   const clientId =
-    "691810798091-vbg78hd82abl5avregge7l5mgotav39s.apps.googleusercontent.com";
+    "147605308177-inak037hs62od1igh8qbhcns9nqbcl5o.apps.googleusercontent.com";
 
   const dispatch = useDispatch();
 
