@@ -90,6 +90,7 @@ const Home = () => {
               <Posts setCurrentId={setCurrentId} />
             </Grid>
             <Grid item xs={12} sm={6} md={9} container>
+              <Form currentId={currentId} setCurrentId={setCurrentId} />
               <AppBar
                 className={classes.appBarSearch}
                 position="static"
@@ -121,7 +122,6 @@ const Home = () => {
                   Search
                 </Button>
               </AppBar>
-              <Form currentId={currentId} setCurrentId={setCurrentId} />
             </Grid>
           </Grid>
           {!searchQuery && !tags.length && (

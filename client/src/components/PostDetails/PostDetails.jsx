@@ -43,6 +43,7 @@ const PostDetails = () => {
       );
     }
   }, [post]);
+  console.log(post);
 
   if (!post) return null;
 
@@ -78,6 +79,23 @@ const PostDetails = () => {
           >
             {post.tags.map((tag) => `#${tag} `)}
           </Typography>
+          <Typography variant="body1">
+            <span
+              style={{ color: "green", fontWeight: "bold", margin: "14px 0" }}
+            >
+              My Travel Diary Date:
+            </span>{" "}
+            {post.date.slice(0, 10)}
+          </Typography>
+          <Typography variant="body1">
+            {" "}
+            <span
+              style={{ color: "green", fontWeight: "bold", margin: "14px 0" }}
+            >
+              My Travel Diary Location:
+            </span>{" "}
+            {post.location}
+          </Typography>
           <Typography
             style={{ padding: "50px 0" }}
             gutterBottom
@@ -86,10 +104,21 @@ const PostDetails = () => {
           >
             {post.message}
           </Typography>
-          <Typography variant="h6">Created by: {post.name}</Typography>
-          <Typography variant="body1">
+          <Typography
+            variant="h6"
+            style={{ color: "red", fontWeight: "bold", margin: "14px 0" }}
+          >
+            Created By: {post.name}
+          </Typography>
+
+          <Typography
+            variant="body1"
+            style={{ color: "red", fontWeight: "bold", margin: "14px 0" }}
+          >
+            <span>This Post was Created</span>{" "}
             {moment(post.createdAt).fromNow()}
           </Typography>
+
           <Divider style={{ margin: "20px 0" }} />
 
           <Divider style={{ margin: "20px 0" }} />

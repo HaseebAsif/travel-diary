@@ -26,7 +26,10 @@ export default function Form({ currentId, setCurrentId }) {
     message: "",
     tags: "",
     selectedFile: "",
+    location: "",
+    date: "",
   });
+  const [dateValue, onChangeDate] = useState(new Date());
 
   // Styles
   const classes = useStyles();
@@ -49,6 +52,10 @@ export default function Form({ currentId, setCurrentId }) {
       setPostData(post);
     }
   }, [post]);
+  useEffect(() => {
+    setPostData({ ...postData, date: dateValue });
+    console.log(postData);
+  }, [dateValue]);
 
   const user = JSON.parse(localStorage.getItem("profile"));
 
@@ -60,6 +67,8 @@ export default function Form({ currentId, setCurrentId }) {
       message: "",
       tags: "",
       selectedFile: "",
+      location: "",
+      date: "",
     });
   };
 
@@ -102,7 +111,15 @@ export default function Form({ currentId, setCurrentId }) {
         className={` ${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">
+        <Typography
+          variant="h6"
+          style={{
+            fontFamily: "cursive",
+
+            fontWeight: "bolder",
+            fontSize: "2.4vw",
+          }}
+        >
           {" "}
           {currentId ? "Editing" : "Creating"} a Travel Diary
         </Typography>
@@ -119,17 +136,17 @@ export default function Form({ currentId, setCurrentId }) {
           <p style={{ fontFamily: "cursive", textAlign: "center" }}>
             Please Select Your Travel Diary Date
           </p>
-          <Calender />
+          <Calender value={dateValue} onChange={onChangeDate} />
         </div>
 
         <TextField
-          name="Please Enter Your Travel Location"
+          name="location"
           variant="outlined"
           label="Please Enter Your Travel Location"
           fullWidth
-          value={postData.tags}
+          value={postData.location}
           onChange={(e) =>
-            setPostData({ ...postData, tags: e.target.value.split(",") })
+            setPostData({ ...postData, location: e.target.value })
           }
         />
 

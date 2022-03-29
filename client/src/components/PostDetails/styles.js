@@ -4,8 +4,10 @@ export default makeStyles((theme) => ({
   media: {
     borderRadius: "20px",
     objectFit: "cover",
-    width: "100%",
-    maxHeight: "600px",
+    width: "50vw",
+    maxHeight: "70vh",
+    border: " 3px groove red ",
+    borderRadius: "22px",
   },
   card: {
     display: "flex",
