@@ -74,9 +74,9 @@ const Home = () => {
   // Return
   return (
     <div>
-      <div style={{ marginBottom: "50px" }}>
+      {/* <div style={{ marginBottom: "50px" }}>
         <HomePageSlider />
-      </div>
+      </div> */}
       <Grow in>
         <Container maxWidth="xl">
           <Grid

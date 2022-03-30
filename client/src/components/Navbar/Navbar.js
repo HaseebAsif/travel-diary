@@ -53,7 +53,14 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <AppBar className={classes.appBar} position="static" color="inherit">
+    <AppBar
+      className={classes.appBar}
+      position="static"
+      color="inherit"
+      style={{
+        background: "#C9B372",
+      }}
+    >
       <Link to="/" className={classes.brandContainer}>
         <img
           className={classes.image}
@@ -63,7 +70,12 @@ const Navbar = () => {
         />
       </Link>
       <div
-        style={{ textAlign: "center", fontSize: "25px", fontFamily: "cursive" }}
+        style={{
+          textAlign: "center",
+          fontSize: "30px",
+          fontFamily: "cursive",
+          color: "white",
+        }}
       >
         Your Travel Diary App
       </div>

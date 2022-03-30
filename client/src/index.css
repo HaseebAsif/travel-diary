@@ -1,7 +1,24 @@
 body {
   background-color: #e5e5e5;
+  margin: 0;
 }
 
+.text-heading {
+  font-size: 64px;
+  color: white;
+  font-weight: 700;
+  width: 50vw;
+  justify-self: left;
+  margin: 4vw;
+}
+.text-para {
+  font-size: 24px;
+  color: white;
+  font-weight: 400;
+  width: 50vw;
+  justify-self: left;
+  margin-bottom: 10vw;
+}
 .MuiGrid-grid-md-3 {
   flex-grow: 0;
   max-width: 75% !important;
@@ -12,5 +29,18 @@ body {
   .MuiGrid-grid-md-3 {
     max-width: 100% !important;
     flex-basis: 100% !important;
+  }
+  .text-heading {
+    font-size: 34px;
+    color: white;
+    font-weight: 700;
+    width: 90vw;
+    justify-self: left;
+    margin: 4vw;
+  }
+  .text-para {
+    font-size: 20px;
+    color: white;
+    width: 90vw;
   }
 }
