@@ -139,17 +139,6 @@ export default function Form({ currentId, setCurrentId }) {
           <Calender value={dateValue} onChange={onChangeDate} />
         </div>
 
-        <TextField
-          name="location"
-          variant="outlined"
-          label="Please Enter Your Travel Location"
-          fullWidth
-          value={postData.location}
-          onChange={(e) =>
-            setPostData({ ...postData, location: e.target.value })
-          }
-        />
-
         <div
           name="message"
           variant="outlined"
@@ -171,6 +160,22 @@ export default function Form({ currentId, setCurrentId }) {
               setPostData({ ...postData, message: e.blocks[0].text })
             }
           />
+        </div>
+        <TextField
+          name="location"
+          variant="outlined"
+          label="Please Enter Your Travel Location"
+          fullWidth
+          value={postData.location}
+          onChange={(e) =>
+            setPostData({ ...postData, location: e.target.value })
+          }
+        />
+        <div
+          style={{ margin: "0 0 50vh 0", width: "60vw" }}
+          className="form-map"
+        >
+          <GoogleMaps />
         </div>
         <TextField
           name="tags"
